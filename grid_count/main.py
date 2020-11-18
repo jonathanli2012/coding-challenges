@@ -55,9 +55,13 @@ def build_helper_grid(grid):
 
 def main(grid, x1, y1, x2, y2):
   helper_grid = build_helper_grid(grid);
+  
   count = 0
-  for i in range(y1, y2 + 1):
-    count += (helper_grid[i][x2 + 1] - helper_grid[i][x1])
+  y2 += 1
+  x2 += 1
+
+  for i in range(y1, y2):
+    count += (helper_grid[i][x2] - helper_grid[i][x1])
   return count
 
 print(main(grid_2,1,5,7,6))
